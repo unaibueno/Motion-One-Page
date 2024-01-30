@@ -1140,6 +1140,10 @@ p {
         line-height: 30px;
         margin-bottom: 40px;
     }
+
+	.logo{
+        font-size: 25px;
+    }
    
 }
 
