@@ -100,6 +100,7 @@ p {
     background: #222222;
     margin-bottom:0;
     min-height:60px;
+    
 }
 
 .navbar-fixed-top {
@@ -148,7 +149,7 @@ p {
     margin-bottom: 30px;
 }
 
-.nav-pills > li > a {
+.nav-pills > li > button {
     background-color: rgb(226, 226, 226);
     color: black;
     font-family: 'SF Pro';
@@ -160,21 +161,26 @@ p {
     padding-right:25px;
     text-transform: uppercase;
     margin-top: 20px;
+    font-size: 17px;
+    font-weight: 700;
+    border: none;
+    padding: 7px;
+    
 }
 
-.nav-pills > li > a:hover, .nav-pills > .active > a, .nav-pills > .active > a:hover, .nav-pills > .active > a:focus {
+.nav-pills > li > button:hover, .nav-pills > .active > button, .nav-pills > .active > button:hover, .nav-pills > .active > button:focus {
     font-weight: 800;
     background-color: #222222;
     color:rgb(226, 226, 226) !important;
 }
 
 .navbar .btn-navbar:hover, .navbar .btn-navbar {
-    background:#2b2b2b;
+    background:#303030;
     border-radius: 10px;
-    padding: 15px;
+    padding: 10px;
     font-size: 25px;    
     color:#fcdcc4;
-    margin-top: 13px;
+    margin-top: 20px;
 }
 
 
@@ -316,7 +322,7 @@ p {
     padding:10px;
     margin-bottom: 0px;
 }
-.section .title h1 {
+.section .title h2 {
     font-weight: normal;
     margin-bottom: 0px;
     padding: 0;
@@ -390,7 +396,7 @@ p {
     text-align: center !important;
 }
 
-.intro h2 {
+.intro h1 {
     font-family: 'Graphik', sans-serif !important;
     font-size: 60px;
     line-height: 1.4;
@@ -606,50 +612,53 @@ p {
 /* Estilos comunes para contenedores de motivos */
 .contenedor-motivos {
     display: flex;
+    position: relative;
+    height: 100%;
+    background-color: white;
 }
 
-.contenedor-motivos .imagen,
+.contenedor-motivos:last-child {
+    background-color: transparent;
+}
+
+.contenedor-motivos .imagen {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    max-height: 100%;
+}
+
+.contenedor-motivos .imagen img {
+    width: auto;
+    max-width: 50%;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+}
+
 .contenedor-motivos .texto {
     flex: 1;
-}
-
-.contenedor-motivos .texto {
-    padding: 70px;
+    padding: 50px;
 }
 
 .contenedor-motivos .texto h2 {
-    font-family: 'Graphik';
-    font-size: 60px;
+    font: 46px 'Graphik', sans-serif;
     text-transform: uppercase;
     padding-bottom: 20px;
     padding-left: 6px;
 }
 
 .contenedor-motivos .texto p {
-    font-size: 23px;
-    font-family: 'suisse';
+    font: 20px 'suisse', sans-serif;
     color: #3f3f3f;
     line-height: 30px;
-    margin: 0; /* Evita el espacio extra en los párrafos */
+    margin: 0;
 }
 
 /* Estilos específicos para diseño y durabilidad */
-.diseño, .durabilidad {
-    background-color: white;
-    height: 100%;
-    
-}
 
-.durabilidad {
-    background-color: #f7f7f7;
-}
 
-.diseño img, .durabilidad img {
-    max-width: 60%; /* Añadido max-width para limitar el tamaño de la imagen */
-    width: 100%; /* Cambiado a 100% para que la imagen sea completamente responsive */
-    margin-top: 100px;
-    margin-left: 150px;
-}
 
 /* Estilos específicos para sostenible */
 .sostenible {
@@ -716,9 +725,12 @@ p {
     border-radius: 8px;
 }
 
-.about-us h3{
-    font-size: 20px;
+.about-us span{
+    font-size: 25px;
     font-family: 'Graphik';
+    padding: 20px;
+    line-height: 70px;
+    text-transform: uppercase;
 }
 
 .about-us p{
@@ -1020,7 +1032,7 @@ p {
 /*
 4 Responsible
 ********************************************************************/
- @media (max-width: 1200px) {
+  @media (max-width: 1200px) {
     .contenedor-motivos {
         flex-direction: column; /* Cambiado a columna para pantallas más pequeñas */
     }
@@ -1045,13 +1057,13 @@ p {
     }
     .contenedor-motivos .texto h2 {
     margin-top: 25px;
-    font-size: 50px;
+    font-size: 40px;
     }
     .sostenible {
        
         padding: 0px 20px;
     }
-}
+} 
 @media (max-width: 979px) {
     body {
         padding-left:0;
@@ -1118,7 +1130,7 @@ p {
     .footer{
         padding: 30px;
     }
-    .intro h2 {
+    .intro h1 {
         font-size: 40px;
         margin-top: 60px;
         padding: 30px;
@@ -1131,18 +1143,21 @@ p {
         margin-bottom: -100px; /* Ajusta este valor según sea necesario para eliminar el espacio en blanco */
     
     }
-    .container .title h1{
+    .container .title h2{
         font-size: 30px;   
-        line-height: 50px;
+        line-height: 40px;
+        text-align: left;
     }
     .container .title p{
-        font-size: 25px;   
+        font-size: 20px;   
         line-height: 30px;
         margin-bottom: 40px;
-    }
+        text-align: left;
+        padding: 0;
 
-	.logo{
-        font-size: 20px;
+    }
+    .logo{
+        font-size: 25px;
     }
    
 }
